@@ -44,7 +44,9 @@ def extract_text_from_image(image_path):
         text = pytesseract.image_to_string(img)
         return text.strip()
     except Exception as e:
-        print(f"Error processing {image_path}: {e}")
+        error_msg = f"Error processing {image_path}: {type(e).__name__}: {e}"
+        print(error_msg)
+        print("  Tip: Ensure Tesseract OCR is properly installed and the image file is valid.")
         return f"[Error processing image: {os.path.basename(image_path)}]"
 
 
@@ -94,7 +96,7 @@ def create_latex_document(image_texts, output_path='notes.tex'):
 \geometry{margin=1in}
 
 \title{Converted Notes from Images}
-\author{Note Conversions}
+\author{OCR Conversion System}
 \date{\today}
 
 \begin{document}
