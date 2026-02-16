@@ -5,9 +5,9 @@
 *.toc
 *.synctex.gz
 
-# Generated files (comment out if you want to commit these)
-# notes.tex
-# notes.pdf
+# Generated files - uncomment to exclude from repository
+notes.tex
+notes.pdf
 
 # Python cache
 __pycache__/
